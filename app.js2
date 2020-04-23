@@ -1,0 +1,352 @@
+import React, { Component } from 'react';
+import { AppRegistry, Text, View, StyleSheet, Image, TextInput, ImageBackground, TouchableHighlight, Alert, Dimensions, ScrollView } from 'react-native';
+import Constants from 'expo-constants';
+
+let deviceHeight = Dimensions.get('window').height;
+let deviceWidth = Dimensions.get('window').width;
+
+export default class App extends Component {
+    state={
+        email:'email:',
+        password:'password:',
+      signin: '',
+        snack:'Favorite Snack:',
+        candy:'Favorite Snack:',
+        allergies:'Allergies:',
+        p1PageDisplay:'block',
+        p2PageDisplay:'none',
+         p3PageDisplay:'none',
+          q3PageDisplay:'none',
+           q4PageDisplay:'none',
+            q5PageDisplay:'none',
+    }
+  handleP1PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'block',
+   p2PageDisplay:'none',
+   q2PageDisplay:'none',
+    q3PageDisplay:'none',
+    q4PageDisplay:'none',
+     q5PageDisplay:'none',
+}))
+  handleP2PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'none',
+   p2PageDisplay:'block',
+   q2PageDisplay:'none',
+    q3PageDisplay:'none',
+    q4PageDisplay:'none',
+}))
+ handleP3PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'none',
+   p2PageDisplay:'none',
+   p3PageDisplay:'block',
+    q3PageDisplay:'none',
+    q4PageDisplay:'none',
+     q5PageDisplay:'none',
+}))
+ handleQ3PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'none',
+   q1PageDisplay:'none',
+   q2PageDisplay:'none',
+    q3PageDisplay:'block',
+    q4PageDisplay:'none',
+     q5PageDisplay:'none',
+}))
+ handleQ4PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'none',
+   q1PageDisplay:'none',
+   q2PageDisplay:'none',
+    q3PageDisplay:'none',
+    q4PageDisplay:'block',
+     q5PageDisplay:'none',
+}))
+ handleQ5PagePress=()=> this.setState(state=>({
+   p1PageDisplay:'none',
+   q1PageDisplay:'none',
+   q2PageDisplay:'none',
+    q3PageDisplay:'none',
+    q4PageDisplay:'none',
+     q5PageDisplay:'block',
+}))
+ render() {
+        return (
+           <View style={styles.container}>
+         <View style ={{display:this.state.p1PageDisplay}}>
+           <View style={styles.contentContainer}>
+          <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           Leading Food Leads A Hand
+           </Text>
+          
+           <Text style={styles.paragraph}>
+           Are you a:
+           </Text>
+           </View>
+        
+          
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Restaurant
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleP2PagePress}>
+              <Text style={styles.boxText}>
+         Restaurant
+           </Text>
+           </TouchableHighlight>
+           
+            <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Shelter
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleP2PagePress}>
+              <Text style={styles.boxText}>
+        Shelter
+           </Text>
+           </TouchableHighlight>
+           </View>
+  <View style ={{display:this.state.p2PageDisplay}}>
+           <View style={styles.contentContainer}>
+          <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           LOGIN
+           </Text>
+          
+           <Text style={styles.paragraph}>
+           Enter your info:
+           </Text>
+           </View>
+           <TextInput style={styles.textBar}
+           onChangeText={(email)=>this.setState({email})}
+           value={this.state.email}/>
+           
+           
+           <TextInput style={styles.textBar}
+            onChangeText={(password)=>this.setState({password})}
+           value={this.state.password}/>
+          
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Or Sign in
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleP1PagePress}>
+              <Text style={styles.boxText}>
+         Or Sign in
+           </Text>
+           
+           </TouchableHighlight>
+           </View>
+
+ <View style ={{display:this.state.p3PageDisplay}}>
+            <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           Your Favorite Color
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Red
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Blue
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Yellow
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Orange
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Purple
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           White
+           </Text>
+           </View>
+           <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Green
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Red
+           </Text>
+           </TouchableHighlight>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Blue
+           </Text>
+           </TouchableHighlight>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Yellow
+           </Text>
+           </TouchableHighlight>
+<TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Orange
+           </Text>
+           </TouchableHighlight>
+<TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Purple
+           </Text>
+           </TouchableHighlight>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+        White
+           </Text>
+           </TouchableHighlight>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ3PagePress}>
+              <Text style={styles.boxText}>
+         Green
+           </Text>
+           </TouchableHighlight>
+           </View>
+           
+           <View style ={{display:this.state.q3PageDisplay}}>
+            <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           What Are Your Allergies?
+           </Text>
+           <TextInput style={styles.textBar}
+            onChangeText={(allergies)=>this.setState({allergies})}
+           value={this.state.allergies}/>
+           </View>
+            <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Next
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ4PagePress}>
+              <Text style={styles.boxText}>
+         Next
+           </Text>
+           </TouchableHighlight>
+           </View>
+           
+            <View style ={{display:this.state.q4PageDisplay}}>
+            <View style={styles.contentContainer}>
+            <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           What Are Your Favorite Snack?
+           </Text>
+           
+           <TextInput style={styles.textBar}
+            onChangeText={(snack)=>this.setState({snack})}
+           value={this.state.snack}/>
+           </View>
+            <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           Next
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleQ5PagePress}>
+              <Text style={styles.boxText}>
+         Next
+           </Text>
+           </TouchableHighlight>
+           </View>
+           </View>
+            <View style ={{display:this.state.q5PageDisplay}}>
+            <View style={styles.contentContainer}>
+            <View style={styles.box}>
+           <Text style={styles.paragraph}>
+           What Are Your Candy?
+           </Text>
+           
+           <TextInput style={styles.textBar}
+            onChangeText={(candy)=>this.setState({candy})}
+           value={this.state.candy}/>
+           </View>
+            <View style={styles.blueBox}>
+           <Text style={styles.buttonText}>
+           End Quiz
+           </Text>
+           </View>
+           <TouchableHighlight style={styles.button}
+           onPress={this.handleP1PagePress}>
+              <Text style={styles.boxText}>
+         End Quiz
+           </Text>
+           </TouchableHighlight>
+           </View>
+           </View>
+         </View>
+      
+         
+           );
+    }
+}
+const styles = StyleSheet.create({
+container: {
+        height: deviceHeight,
+        width: deviceWidth,
+    },
+    contentContainer:{
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    textBar:{
+        height:30,
+        width:200,
+        fontsize:20,
+        borderColor:'black',
+        borderRadius:20,
+        margin:10,
+        borderWidth:2,
+    },
+    
+    buttonText:{
+        fontFamily:'futura',
+        color:'white',
+        fontSize:14,
+    },
+    
+    boxText:{
+       fontSize:20,
+         fontWeight:'bold',
+         textAlign:'center',
+         alignItems:'center',
+         margin:10,
+         justifyContent:'center',
+        borderRadius:20,
+         backgroundColor:'teal',
+        height:30,
+        width:250,
+     color:'white',
+     flexDirection:'row',
+       
+    },
+    box:{
+    textAlign:'center',
+    alignItems:'center',
+    },
+    
+  });
